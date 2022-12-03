@@ -5,11 +5,7 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductCatalogService", "ProductCatalogService\ProductCatalogService.csproj", "{6504A38D-65BF-43F8-9535-1071BEE24388}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalogService.UnitTests", "Tests\ProductCatalogService.UnitTests\ProductCatalogService.UnitTests.csproj", "{6AB69B5B-52E5-474F-B602-1EB9008DCE20}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C832F38A-BE5C-424A-A16E-617DBBE373C1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalogService.IntegrationTests", "Tests\ProductCatalogService.IntegrationTests\ProductCatalogService.IntegrationTests.csproj", "{08FB8976-9653-4042-83EB-07E2429433AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,21 +17,9 @@ Global
 		{6504A38D-65BF-43F8-9535-1071BEE24388}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6504A38D-65BF-43F8-9535-1071BEE24388}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6504A38D-65BF-43F8-9535-1071BEE24388}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6AB69B5B-52E5-474F-B602-1EB9008DCE20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6AB69B5B-52E5-474F-B602-1EB9008DCE20}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6AB69B5B-52E5-474F-B602-1EB9008DCE20}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6AB69B5B-52E5-474F-B602-1EB9008DCE20}.Release|Any CPU.Build.0 = Release|Any CPU
-		{08FB8976-9653-4042-83EB-07E2429433AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{08FB8976-9653-4042-83EB-07E2429433AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{08FB8976-9653-4042-83EB-07E2429433AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{08FB8976-9653-4042-83EB-07E2429433AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{6AB69B5B-52E5-474F-B602-1EB9008DCE20} = {C832F38A-BE5C-424A-A16E-617DBBE373C1}
-		{08FB8976-9653-4042-83EB-07E2429433AB} = {C832F38A-BE5C-424A-A16E-617DBBE373C1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0212C949-F5B8-4DED-AE8B-0E9519BE82DB}
