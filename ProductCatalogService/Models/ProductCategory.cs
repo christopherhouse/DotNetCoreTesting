@@ -1,4 +1,6 @@
-﻿namespace ProductCatalogService.Models;
+﻿using ProductCatalogService.Data.RepositoryModels;
+
+namespace ProductCatalogService.Models;
 
 public class ProductCategory
 {
@@ -13,4 +15,19 @@ public class ProductCategory
     public Guid CreatedByUserId { get; set; }
 
     public Guid UpdatedByUserId { get;set; }
+
+    public static ProductCategory FromProductCategoryRepositoryModel(ProductCategoryRepositoryModel repoModel)
+    {
+        var model = new ProductCategory
+        {
+            ProductCategoryId = repoModel.ProductCategoryId,
+            CategoryName = repoModel.CategoryName,
+            DateCreated = repoModel.DateCreated,
+            DateUpdated = repoModel.DateUpdated,
+            CreatedByUserId = repoModel.CreatedByUserId,
+            UpdatedByUserId = repoModel.UpdatedByUserId,
+        };
+
+        return model;
+    }
 }
