@@ -37,11 +37,11 @@ public class ProductCategoryControllerTests : BaseUnitTest
         // Arrange
         var category = TestFixture.Create<ProductCategory>();
         var productCategoryId = TestFixture.Create<int>();
-        _productCategoryService.Setup(_ => _.GetProductCategoryById(It.Is<int>(id => id == productCategoryId)))
-            .Returns(category);
+        _productCategoryService.Setup(_ => _.GetProductCategoryByIdAsync(It.Is<int>(id => id == productCategoryId)))
+            .ReturnsAsync(category);
 
         // Act
-        var productCategoryResult = _categoryController.GetProductCategoryById(productCategoryId);
+        var productCategoryResult = await _categoryController.GetProductCategoryByIdAsync(productCategoryId);
 
         // Assert
         this.Repository.VerifyAll();
@@ -63,15 +63,15 @@ public class ProductCategoryControllerTests : BaseUnitTest
     }
 
     [Fact]
-    public void GetProductCategoryById_Should_Return_404_When_ProductCategory_Is_Not_Found()
+    public async Task GetProductCategoryById_Should_Return_404_When_ProductCategory_Is_Not_Found()
     {
         // Arrange
         var productCategoryId = TestFixture.Create<int>();
-        _productCategoryService.Setup(_ => _.GetProductCategoryById(It.Is<int>(id => id == productCategoryId)))
-            .Returns<ProductCategory>(null);
+        _productCategoryService.Setup(_ => _.GetProductCategoryByIdAsync(It.Is<int>(id => id == productCategoryId)))
+            .ReturnsAsync((ProductCategory)null);
 
         // Act
-        var result = _categoryController.GetProductCategoryById(productCategoryId);
+        var result = await _categoryController.GetProductCategoryByIdAsync(productCategoryId);
 
         // Assert
         _productCategoryService.VerifyAll();

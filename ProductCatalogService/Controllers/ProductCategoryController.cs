@@ -16,10 +16,10 @@ public class ProductCategoryController : ControllerBase
         _productCategoryService = productCategoryService;
     }
 
-    public IActionResult GetProductCategoryById(int productCategoryId)
+    public async Task<IActionResult> GetProductCategoryByIdAsync(int productCategoryId)
     {
         IActionResult result = null;
-        var category = _productCategoryService.GetProductCategoryById(productCategoryId);
+        var category = _productCategoryService.GetProductCategoryByIdAsync(productCategoryId);
 
         if (category == null)
         {

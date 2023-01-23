@@ -4,7 +4,7 @@ namespace ProductCatalogService.Services;
 
 public class ProductCategoryService : IProductCategoryService
 {
-    public ProductCategory GetProductCategoryById(int productCategoryId)
+    public async Task<ProductCategory> GetProductCategoryByIdAsync(int productCategoryId)
     {
         throw new NotImplementedException();
     }
