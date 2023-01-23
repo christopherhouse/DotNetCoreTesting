@@ -24,4 +24,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\ProductCatalogService\ProductCatalogService.csproj" />
+  </ItemGroup>
+
 </Project>
