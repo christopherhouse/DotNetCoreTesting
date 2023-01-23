@@ -19,7 +19,7 @@ public class ProductCategoryController : ControllerBase
     public async Task<IActionResult> GetProductCategoryByIdAsync(int productCategoryId)
     {
         IActionResult result = null;
-        var category = _productCategoryService.GetProductCategoryByIdAsync(productCategoryId);
+        var category = await _productCategoryService.GetProductCategoryByIdAsync(productCategoryId);
 
         if (category == null)
         {
