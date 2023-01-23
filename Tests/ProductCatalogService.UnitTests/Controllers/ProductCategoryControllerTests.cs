@@ -88,4 +88,33 @@ public class ProductCategoryControllerTests : BaseUnitTest
             .Should()
             .Be((int)HttpStatusCode.NotFound);
     }
+
+    [Fact]
+    public async Task GetAllProducts_Should_Return_Http_500_On_Exception()
+    {
+        // Arrange
+        _productCategoryService.Setup(_ => _.GetAllProductsAsync())
+            .Throws<InvalidOperationException>();
+
+        // Act
+        var result = await _categoryController.GetAllProductCategories();
+
+        // Assert
+        Repository.VerifyAll();
+
+        result.Should()
+            .NotBeNull();
+
+        result.Should()
+            .BeOfType<StatusCodeResult>();
+        
+        var statusCodeResult = result as StatusCodeResult;
+
+        statusCodeResult.Should()
+            .NotBeNull();
+
+        statusCodeResult.StatusCode
+            .Should()
+            .Be(500);
+    }
 }

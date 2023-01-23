@@ -15,6 +15,7 @@ public class ProductCategoryController : ControllerBase
         _productCategoryService = productCategoryService;
     }
 
+    [HttpGet]
     public async Task<IActionResult> GetProductCategoryByIdAsync(int productCategoryId)
     {
         IActionResult result = null;
@@ -27,6 +28,24 @@ public class ProductCategoryController : ControllerBase
         else
         {
             result = new OkObjectResult(category);
+        }
+
+        return result;
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetAllProductCategories()
+    {
+        IActionResult result = null;
+
+        try
+        {
+            var products = await _productCategoryService.GetAllProductsAsync();
+            result = new OkObjectResult(products);
+        }
+        catch (Exception e)
+        {
+            result = new StatusCodeResult(500);
         }
 
         return result;

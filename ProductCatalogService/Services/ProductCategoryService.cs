@@ -8,4 +8,9 @@ public class ProductCategoryService : IProductCategoryService
     {
         throw new NotImplementedException();
     }
+
+    public async Task<IEnumerable<ProductCategory>> GetAllProductsAsync()
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -5,4 +5,5 @@ namespace ProductCatalogService.Services;
 public interface IProductCategoryService
 {
     Task<ProductCategory> GetProductCategoryByIdAsync(int productCategoryId);
+    Task<IEnumerable<ProductCategory>> GetAllProductsAsync();
 }
